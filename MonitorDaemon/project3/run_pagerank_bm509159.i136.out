@@ -1,0 +1,27 @@
+ncpus=1,neednodes=i96:ppn=8+i97:ppn=8,nodes=i96:ppn=8+i97:ppn=8,walltime=00:10:00
+i96
+i96
+i96
+i96
+i96
+i96
+i96
+i96
+i97
+i97
+i97
+i97
+i97
+i97
+i97
+i97
+*********************************************
+* The Project 3 in B534 class  *
+* Resource Monitoring System   *
+*********************************************
+*********************************************
+* The Project 3 in B534 class  *
+* Resource Monitoring System   *
+*********************************************
+Bare Metal job Finished
+ncpus=1,neednodes=i96:ppn=8+i97:ppn=8,nodes=i96:ppn=8+i97:ppn=8,walltime=00:10:00

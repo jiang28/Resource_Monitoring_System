@@ -1,0 +1,39 @@
+#!/bin/bash
+#PBS -q b534  
+#PBS -l nodes=i96:ppn=8+i97:ppn=8
+#PBS -l walltime=01:00:00
+#PBS -o run_pagerank_bm$PBS_JOBID.out
+
+PAGERANK=/N/u/jiang28/Project4/MPI_pagerank/mpi_main
+PROQUERY=mpi_main
+MONITORDIR=/N/u/jiang28/Project4/MonitorDaemon/
+DATADIR=/N/u/jiang28/Project4_Data/
+DATAFILE=${DATADIR}project3_1M
+OUTDIR=/N/u/jiang28/Project4_Result/
+OUTURLS=${OUTDIR}topurls.txt
+OUTLOG=${OUTDIR}bmlog.txt
+NODEFILE=${OUTDIR}bmnodes
+BROKERIP=129.79.49.248
+BROKERPORT=61616
+PRONUM=4
+ITERNUM=1000
+THRESH=-0.001
+
+cat $PBS_NODEFILE
+uniq $PBS_NODEFILE > ${NODEFILE}
+# run the MPI pagerank and monitoring application in Bare Metal Cluster
+# ========= 
+#module load openmpi
+
+#cd MPI_pagerank
+#mpirun --mca btl_tcp_if_exclude lo,eth1 -hostfile $PBS_NODEFILE -np 8 ./mpi_main pagerank.input.1000.9 newout1.txt 20 0.000001
+
+#mpirun -hostfile ${NODEFILE} -np ${PRONUM} ./${PAGERANK} ${DATAFILE} ${OUTURLS} ${ITERNUM} ${THRESH} 
+#sleep 1
+for NODE in `uniq $PBS_NODEFILE`
+do
+	ssh $NODE "cd ${MONITORDIR}; java -cp \"./lib/*:.\" project3/ProcCpuMem ${BROKERIP} ${BROKERPORT} {PROQUERY}" &
+done
+wait
+# =========
+echo "Bare Metal job Finished"

@@ -1,0 +1,56 @@
+Intel compiler suite version 11.1/072 loaded
+OpenMPI version 1.4.2 loaded
+log4j:WARN No appenders could be found for logger (org.apache.activemq.transport.tcp.TcpTransport).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+javax.jms.JMSException: Could not connect to broker URL: tcp://129.79.49.181:61616. Reason: java.net.ConnectException: Connection refused
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:35)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:286)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:230)
+	at org.apache.activemq.ActiveMQConnectionFactory.createConnection(ActiveMQConnectionFactory.java:178)
+	at project3.ProcCpuMem$Producer.run(ProcCpuMem.java:80)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:327)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:193)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:180)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:384)
+	at java.net.Socket.connect(Socket.java:546)
+	at org.apache.activemq.transport.tcp.TcpTransport.connect(TcpTransport.java:484)
+	at org.apache.activemq.transport.tcp.TcpTransport.doStart(TcpTransport.java:447)
+	at org.apache.activemq.util.ServiceSupport.start(ServiceSupport.java:53)
+	at org.apache.activemq.transport.InactivityMonitor.start(InactivityMonitor.java:126)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:58)
+	at org.apache.activemq.transport.WireFormatNegotiator.start(WireFormatNegotiator.java:72)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:58)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:58)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:266)
+	... 4 more
+log4j:WARN No appenders could be found for logger (org.apache.activemq.transport.tcp.TcpTransport).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+javax.jms.JMSException: Could not connect to broker URL: tcp://129.79.49.181:61616. Reason: java.net.ConnectException: Connection refused
+	at org.apache.activemq.util.JMSExceptionSupport.create(JMSExceptionSupport.java:35)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:286)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:230)
+	at org.apache.activemq.ActiveMQConnectionFactory.createConnection(ActiveMQConnectionFactory.java:178)
+	at project3.ProcCpuMem$Producer.run(ProcCpuMem.java:80)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:327)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:193)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:180)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:384)
+	at java.net.Socket.connect(Socket.java:546)
+	at org.apache.activemq.transport.tcp.TcpTransport.connect(TcpTransport.java:484)
+	at org.apache.activemq.transport.tcp.TcpTransport.doStart(TcpTransport.java:447)
+	at org.apache.activemq.util.ServiceSupport.start(ServiceSupport.java:53)
+	at org.apache.activemq.transport.InactivityMonitor.start(InactivityMonitor.java:126)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:58)
+	at org.apache.activemq.transport.WireFormatNegotiator.start(WireFormatNegotiator.java:72)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:58)
+	at org.apache.activemq.transport.TransportFilter.start(TransportFilter.java:58)
+	at org.apache.activemq.ActiveMQConnectionFactory.createActiveMQConnection(ActiveMQConnectionFactory.java:266)
+	... 4 more
